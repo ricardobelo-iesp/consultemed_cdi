@@ -1,55 +1,106 @@
--- MySQL dump 10.16  Distrib 10.3.9-MariaDB, for debian-linux-gnu (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: acme
--- ------------------------------------------------------
--- Server version	10.3.9-MariaDB-1:10.3.9+maria~bionic
+-- Host: db
+-- Generation Time: 21-Jul-2019 às 04:04
+-- Versão do servidor: 10.2.15-MariaDB-log
+-- PHP Version: 7.2.6
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 --
--- Table structure for table `TB_CONTATOS`
+-- Database: `acme`
 --
 
-DROP TABLE IF EXISTS `TB_CONTATOS`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `TB_AGENDAMENTOS`
+--
+
+CREATE TABLE `TB_AGENDAMENTOS` (
+  `ID` int(11) NOT NULL,
+  `ID_MEDICO` int(11) NOT NULL,
+  `ID_PACIENTE` int(11) NOT NULL,
+  `DATA_AGENDAMENTO` datetime NOT NULL,
+  `DATA_CONSULTA` datetime NOT NULL,
+  `STATUS` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `TB_CONTATOS`
+--
+
 CREATE TABLE `TB_CONTATOS` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `NOME` varchar(100) NOT NULL,
   `EMAIL` varchar(100) NOT NULL,
-  `TELEFONE` varchar(30) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `TELEFONE` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `TB_CONTATOS`
+-- Extraindo dados da tabela `TB_CONTATOS`
 --
 
-LOCK TABLES `TB_CONTATOS` WRITE;
-/*!40000 ALTER TABLE `TB_CONTATOS` DISABLE KEYS */;
-INSERT INTO `TB_CONTATOS` VALUES (1,'Carlos Barbosa Gomes Filho','cbarbosagomesfilho@gmail.com','83991267778');
-/*!40000 ALTER TABLE `TB_CONTATOS` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `TB_CONTATOS` (`ID`, `NOME`, `EMAIL`, `TELEFONE`) VALUES
+(1, 'Carlos Barbosa Gomes Filho', 'cbarbosagomesfilho@gmail.com', '83991267778'),
+(3, 'Ricardo Belo', 'contato@ricardobelo.com.br', '131232121321');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `TB_USUARIOS`
+-- Estrutura da tabela `TB_MEDICOS`
 --
 
-DROP TABLE IF EXISTS `TB_USUARIOS`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TB_MEDICOS` (
+  `ID` int(11) NOT NULL,
+  `NOME` varchar(100) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `TELEFONE` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `TB_MEDICOS`
+--
+
+INSERT INTO `TB_MEDICOS` (`ID`, `NOME`, `EMAIL`, `TELEFONE`) VALUES
+(1, 'Dr. Carlos Barbosa', 'cbarbosagomesfilho@gmail.com', '83991267778');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `TB_PACIENTES`
+--
+
+CREATE TABLE `TB_PACIENTES` (
+  `ID` int(11) NOT NULL,
+  `NOME` varchar(100) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `TELEFONE` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `TB_PACIENTES`
+--
+
+INSERT INTO `TB_PACIENTES` (`ID`, `NOME`, `EMAIL`, `TELEFONE`) VALUES
+(1, 'Carlos Barbosa Gomes Filho', 'cbarbosagomesfilho@gmail.com', '83991267778'),
+(3, 'Ricardo Belo', 'contato@ricardobelo.com.br', '131232121321');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `TB_USUARIOS`
+--
+
 CREATE TABLE `TB_USUARIOS` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL,
   `NOME` varchar(100) NOT NULL,
   `LOGIN` varchar(100) NOT NULL,
   `EMAIL` varchar(100) NOT NULL,
@@ -57,28 +108,82 @@ CREATE TABLE `TB_USUARIOS` (
   `SENHA` varchar(100) NOT NULL,
   `ATIVO` tinyint(1) DEFAULT NULL,
   `ADMINISTRADOR` tinyint(1) DEFAULT NULL,
-  `VISITANTE` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `VISITANTE` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `TB_USUARIOS`
+-- Extraindo dados da tabela `TB_USUARIOS`
 --
 
-LOCK TABLES `TB_USUARIOS` WRITE;
-/*!40000 ALTER TABLE `TB_USUARIOS` DISABLE KEYS */;
-INSERT INTO `TB_USUARIOS` VALUES (2,'Carlos Barbosa','cbgomes','cbgomes@gmail.com','00000000','12345',1,0,0),(3,'xico','xico','xico@gmail.com','090909090909','123',0,1,0);
-/*!40000 ALTER TABLE `TB_USUARIOS` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `TB_USUARIOS` (`ID`, `NOME`, `LOGIN`, `EMAIL`, `TELEFONES`, `SENHA`, `ATIVO`, `ADMINISTRADOR`, `VISITANTE`) VALUES
+(2, 'Carlos Barbosa', 'cbgomes', 'cbgomes@gmail.com', '00000000', '827CCB0EEA8A706C4C34A16891F84E7B', 1, 0, 0),
+(4, 'Ricardo Belo', 'belo', 'aaaassd@ricardobelo.com.br', '21312321312', '200820E3227815ED1756A6B531E7E0D2', 0, 1, 0);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+--
+-- Indexes for dumped tables
+--
 
--- Dump completed on 2019-07-19 17:52:41
+--
+-- Indexes for table `TB_AGENDAMENTOS`
+--
+ALTER TABLE `TB_AGENDAMENTOS`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TB_CONTATOS`
+--
+ALTER TABLE `TB_CONTATOS`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TB_MEDICOS`
+--
+ALTER TABLE `TB_MEDICOS`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TB_PACIENTES`
+--
+ALTER TABLE `TB_PACIENTES`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TB_USUARIOS`
+--
+ALTER TABLE `TB_USUARIOS`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `TB_AGENDAMENTOS`
+--
+ALTER TABLE `TB_AGENDAMENTOS`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `TB_CONTATOS`
+--
+ALTER TABLE `TB_CONTATOS`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `TB_MEDICOS`
+--
+ALTER TABLE `TB_MEDICOS`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `TB_PACIENTES`
+--
+ALTER TABLE `TB_PACIENTES`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `TB_USUARIOS`
+--
+ALTER TABLE `TB_USUARIOS`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;

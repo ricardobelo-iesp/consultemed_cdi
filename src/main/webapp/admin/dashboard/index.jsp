@@ -59,7 +59,7 @@
 	
 	            <div class="info-box-content">
 	              <span class="info-box-text">Pacientes</span>
-	              <span class="info-box-number">0</span>
+	              <span class="info-box-number">${numPaciente}</span>
 	            </div>
 	          </div>
 	        </div>
