@@ -35,7 +35,7 @@
 	            <span class="info-box-icon bg-red"><i class="ion ion-ios-people-outline"></i></span>
 	            <div class="info-box-content">
 	              <span class="info-box-text">Médicos</span>
-	              <span class="info-box-number">0</span>
+	              <span class="info-box-number">${numMedico}</span>
 	            </div>
 	          </div>
 	        </div>

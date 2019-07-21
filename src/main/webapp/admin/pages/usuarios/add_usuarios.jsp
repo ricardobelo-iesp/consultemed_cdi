@@ -50,10 +50,7 @@
                   <input type="nome" name="nome" class="form-control" required="required" value="${usuario.nome}" id="nome" placeholder="Informe o nome">
                 </div>
                 
-                 <div class="form-group">
-                  <label for="login">Login</label>
-                  <input type="login" name="login" class="form-control" required="required" value="${usuario.login}" id="login" placeholder="Informe o login">
-                </div>
+	
                 
                 <div class="form-group">
                   <label for="email">Email</label> 
@@ -62,7 +59,7 @@
                 
                 <div class="form-group">
                   <label for="telefone">Telefone</label>
-                  <input type="telefone" name="telefone" class="form-control" required="required" value="${usuario.telefone}" id="telefone" placeholder="Informe o email">
+                  <input type="telefone" name="telefone" class="form-control" required="required" value="${usuario.telefones}" id="telefone" placeholder="Informe o email">
                 </div>
                 
                 <div class="form-group">

@@ -72,6 +72,7 @@
         
         <li><a href="${pageContext.request.contextPath}/admin/contatos?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Contatos</span></a></li>
         <li><a href="${pageContext.request.contextPath}/admin/usuarios?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Usuários</span></a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/medicos?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Médicos</span></a></li>        
 <!--         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Solicitações</span></a></li> -->
       </ul>
     </section>
@@ -89,9 +90,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+      <b>Version</b> 3.0
     </div>
-    <strong>Copyright &copy; 2018-2019 <a href="https://github.com/CarlosBarbosaFilho">Carlos Barbosa G. Filho</a>.</strong> Todos os direitos reservsados
+    <strong>Copyright &copy; 2018-2019 <a href="https://github.com/ricardobelo-iesp/consultemed_cdi">Ricardo / Mauro / Carlos Barbosa G. Filho</a>.</strong> Todos os direitos reservsados
   </footer>
 
 
