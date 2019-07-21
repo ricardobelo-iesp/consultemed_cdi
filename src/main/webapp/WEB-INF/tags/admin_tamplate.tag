@@ -72,7 +72,10 @@
         
         <li><a href="${pageContext.request.contextPath}/admin/contatos?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Contatos</span></a></li>
         <li><a href="${pageContext.request.contextPath}/admin/usuarios?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Usuários</span></a></li>
-		<li><a href="${pageContext.request.contextPath}/admin/medicos?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Médicos</span></a></li>        
+		<li><a href="${pageContext.request.contextPath}/admin/medicos?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Médicos</span></a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/pacientes?action=list"><i class="fa fa-circle-o text-aqua"></i> <span>Paciente</span></a></li>
+		
+		
 <!--         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Solicitações</span></a></li> -->
       </ul>
     </section>

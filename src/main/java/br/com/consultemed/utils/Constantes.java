@@ -44,6 +44,12 @@ public class Constantes {
 	public static final String MEDICO_REMOVIDO = "  removido com sucesso";
 	public static final String MEDICO_EDITADO = "  alterado com sucesso";
 
+	//MENSAGENS DA TELA PACIENTE
+	public static final String PACIENTE = "paciente";
+	public static final String PACIENTE_SUCESSO = " cadastrado com sucesso";
+	public static final String PACIENTE_REMOVIDO = "  removido com sucesso";
+	public static final String PACIENTE_EDITADO = "  alterado com sucesso";
+	f
 	//MENSAGENS DA TELA USUARIO
 	public static final String SOLICITACAO = "solicitação";
 	
@@ -51,6 +57,9 @@ public class Constantes {
 	public static final String MEDICOS = "/admin/pages/medicos/list_medicos.jsp";
 	public static final String ADD_MEDICOS = "/admin/pages/medicos/add_medicos.jsp";
 	
+	public static final String PACIENTES = "/admin/pages/pacientes/list_pacientes.jsp";
+	public static final String ADD_PACIENTES = "/admin/pages/pacientes/add_pacientes.jsp";	
+
 	public static final String CONTATOS = "/admin/pages/contatos/list_contatos.jsp";
 	public static final String ADD_CONTATOS = "/admin/pages/contatos/add_contatos.jsp";
 	
